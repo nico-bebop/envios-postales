@@ -21,9 +21,7 @@ public class DespachadorDeEnvios {
             return Double.valueOf(80) * porcentajeDeAumento;
         } else if (cantidadDePaquetes > 15){
             Double totalconAumento =  Double.valueOf(cantidadDePaquetes * 15) * porcentajeDeAumento ;
-            Double porcentajeDescuento = totalconAumento * 0.05;
-            Double totalConDescuento =  totalconAumento - porcentajeDescuento;
-            return totalConDescuento;
+            return Double.valueOf(totalconAumento)-(totalconAumento * 0.05);
         }
         return Double.valueOf(cantidadDePaquetes * 15) * porcentajeDeAumento ;
     }
