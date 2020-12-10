@@ -10,7 +10,7 @@ public class AsignadorDeVehiculos {
         } else if (peso < 150) {
             return Vehiculo.CAMIONETA;
         }
-        else if (peso < 0.50){
+        else if (envio.getPaquetes().size() == 1 && peso < 0.50){
             return Vehiculo.DRON;
         }
         throw new EsMuyPesadoException();
