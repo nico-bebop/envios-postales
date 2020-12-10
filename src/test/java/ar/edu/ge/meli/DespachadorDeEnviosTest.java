@@ -50,6 +50,16 @@ public class DespachadorDeEnviosTest {
     }
 
     @Test
+    public void con16PaquetesElCostoDebeSer228() {
+        dadoQueTengo0Envios();
+        dadoQueTengoUnEnvioConUnaCantidadDePaquetes(16);
+
+        cuandoCalculoElCosto();
+
+        entoncesVerificoQueElCostoEs(Double.valueOf(228));
+    }
+
+    @Test
     public void con11EnviosElCostoTieneUn10Porciento() {
         dadoQueTengo11Envios();
         dadoQueTengoUnEnvioConUnaCantidadDePaquetes(7);
@@ -58,6 +68,7 @@ public class DespachadorDeEnviosTest {
 
         entoncesVerificoQueElCostoEs(Double.valueOf(88));
     }
+
 
     private void dadoQueTengo11Envios() {
         doReturn(11).when(repositorioDeEnvios).getCantidadDeEnviosDelDia();

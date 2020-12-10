@@ -19,8 +19,13 @@ public class DespachadorDeEnvios {
         }
         else if(cantidadDePaquetes < 10){
             return Double.valueOf(80) * porcentajeDeAumento;
+        } else if (cantidadDePaquetes > 15){
+            Double totalconAumento =  Double.valueOf(cantidadDePaquetes * 15) * porcentajeDeAumento ;
+            Double porcentajeDescuento = totalconAumento * 0.05;
+            Double totalConDescuento =  totalconAumento - porcentajeDescuento;
+            return totalConDescuento;
         }
-        return Double.valueOf(cantidadDePaquetes * 15) * porcentajeDeAumento;
+        return Double.valueOf(cantidadDePaquetes * 15) * porcentajeDeAumento ;
     }
 
     public void setRepositorioDeEnvios(RepositorioDeEnvios repositorioDeEnvios) {
